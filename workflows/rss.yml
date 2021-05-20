@@ -34,17 +34,17 @@ jobs:
           data: 'visibility=unlisted&status=${{on.rss.outputs.title}} 👉🏻${{on.rss.outputs.link}}'
           timeout: 10000
           is_debug: false
-  friendica:
-    name: post2friendica
-    runs-on: ubuntu-latest
-    steps:
-      - name: send to friendica
-        uses: actionsflow/axios@v1
-        with:
-          url: ${{ secrets.FRIENDICA_POST_URL }}
-          method: 'POST'
-          accept: 200,201,204
-          content-type: application/x-www-form-urlencoded
-          data: 'key=${{ secrets.FRIENDICA_KEY }}&type=link&link=<<<${{on.rss.outputs.link}}>>>&title=<<<${{on.rss.outputs.title}}>>>&msg=<<<${{on.rss.outputs.content}}>>>&description=<<<${{on.rss.outputs.contentSnippet}}>>>&date=<<<${{on.rss.outputs.pubDate}}>>>&url=<<<${{on.rss.outputs.link}}>>>'
-          timeout: 10000
-          is_debug: false
+#   friendica:
+#     name: post2friendica
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: send to friendica
+#         uses: actionsflow/axios@v1
+#         with:
+#           url: ${{ secrets.FRIENDICA_POST_URL }}
+#           method: 'POST'
+#           accept: 200,201,204
+#           content-type: application/x-www-form-urlencoded
+#           data: 'key=${{ secrets.FRIENDICA_KEY }}&type=link&link=<<<${{on.rss.outputs.link}}>>>&title=<<<${{on.rss.outputs.title}}>>>&msg=<<<${{on.rss.outputs.content}}>>>&description=<<<${{on.rss.outputs.contentSnippet}}>>>&date=<<<${{on.rss.outputs.pubDate}}>>>&url=<<<${{on.rss.outputs.link}}>>>'
+#           timeout: 10000
+#           is_debug: false
