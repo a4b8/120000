@@ -41,7 +41,7 @@ jobs:
       - name: send to bayern
         uses: actionsflow/axios@v1
         with:
-          url: ${{ secrets.MASTODON_POST_URL }}
+          url: ${{ secrets.MASTODON_POST_URL_2 }}
           method: 'POST'
           content-type: application/x-www-form-urlencoded
           data: 'visibility=unlisted&status=${{on.rss.outputs.title}} 👉🏻${{on.rss.outputs.link}}'
